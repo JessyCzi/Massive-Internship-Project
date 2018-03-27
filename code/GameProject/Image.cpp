@@ -1,5 +1,4 @@
 #include "Image.h"
-#include "Vector2f.h"
 
 Image::Image(const char* path, int xOffset, int yOffset, int width, int height)
 	: myName(path)

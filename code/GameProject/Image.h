@@ -5,14 +5,13 @@
 
 #include "SFML\Graphics\Sprite.hpp"
 #include "SFML\Graphics\Texture.hpp"
-
-struct Vector2f;
+#include "lib\math\Vector.h"
 
 class Image
 {
 public:
 	Image(const char* path, int xOffset = 0, int yOffset = 0, int width = 0, int height = 0);
-    ~Image();
+	~Image();
 
 	sf::Sprite& GetSprite();
 	void SetPosition(const Vector2f& aPosition);
@@ -22,9 +21,9 @@ private:
 
 	sf::Texture myTexture;
 	sf::Sprite mySprite;
-    
-    //debug
-    std::string myName;
+	
+	//debug
+	std::string myName;
 };
 
 #endif

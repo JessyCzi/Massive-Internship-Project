@@ -9,19 +9,19 @@
 
 void InputManager::Init()
 {
-    for (int i = 0; i < eTOTAL_SIZE; ++i)
-    {
-        myButtons[i].isDown = false;
-        myButtons[i].wasDown = false;
-    }
+	for (int i = 0; i < eTOTAL_SIZE; ++i)
+	{
+		myButtons[i].isDown = false;
+		myButtons[i].wasDown = false;
+	}
 }
 
 void InputManager::Update()
 {
-    for (int i = 0; i < eTOTAL_SIZE; ++i)
-    {
-        myButtons[i].wasDown = myButtons[i].isDown;
-    }
+	for (int i = 0; i < eTOTAL_SIZE; ++i)
+	{
+		myButtons[i].wasDown = myButtons[i].isDown;
+	}
 
 	UpdateButtonStates();
 	UpdateCursorPosition();
@@ -29,22 +29,22 @@ void InputManager::Update()
 
 bool InputManager::IsButtonDown(Button button)
 {
-    if (button >= eTOTAL_SIZE || button < 0)
-    {
-        return false;
-    }
+	if (button >= eTOTAL_SIZE || button < 0)
+	{
+		return false;
+	}
 
-    return myButtons[button].isDown;
+	return myButtons[button].isDown;
 }
 
 bool InputManager::WasButtonPressed(Button button)
 {
-    if (button >= eTOTAL_SIZE || button < 0)
-    {
-        return false;
-    }
+	if (button >= eTOTAL_SIZE || button < 0)
+	{
+		return false;
+	}
 
-    return myButtons[button].isDown && !myButtons[button].wasDown;
+	return myButtons[button].isDown && !myButtons[button].wasDown;
 }
 
 void InputManager::UpdateButtonStates()
@@ -63,11 +63,11 @@ void InputManager::UpdateButtonStates()
 void InputManager::UpdateCursorPosition()
 {
 	sf::Vector2i mousePos = sf::Mouse::getPosition(*Game::GetGameWindow()->GetRenderWindow());
-    myCursorPos.Set((float)mousePos.x, (float)mousePos.y);
+	myCursorPos.Set((float)mousePos.x, (float)mousePos.y);
 }
 
 void InputManager::GetCursorPosition(float& X, float& Y)
 {
-    X = myCursorPos.x;
-    Y = myCursorPos.y;
+	X = myCursorPos.x;
+	Y = myCursorPos.y;
 }

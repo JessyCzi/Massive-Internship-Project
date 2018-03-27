@@ -8,12 +8,12 @@ class Image;
 class Renderer
 {
 public:
-    bool Init();
-    void Shutdown();
+	bool Init();
+	void Shutdown();
 
 	void Prepare();
-    void Render();
-    void Draw(Image* image);
+	void Render();
+	void Draw(Image* image);
 
 private:
 

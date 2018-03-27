@@ -75,7 +75,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\external\SFML-2.3.2\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\external\SFML-2.3.2\include;src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>..\..\external\SFML-2.3.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -87,7 +87,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\external\SFML-2.3.2\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\external\SFML-2.3.2\include;src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>..\..\external\SFML-2.3.2\lib</AdditionalLibraryDirectories>
@@ -101,7 +101,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\external\SFML-2.3.2\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\external\SFML-2.3.2\include;src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -116,7 +116,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\external\SFML-2.3.2\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\external\SFML-2.3.2\include;src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -126,40 +126,43 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Avatar.h" />
-    <ClInclude Include="CollisionManager.h" />
-    <ClInclude Include="Enemy.h" />
-    <ClInclude Include="Entity.h" />
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="Image.h" />
-    <ClInclude Include="InputManager.h" />
-    <ClInclude Include="Projectile.h" />
-    <ClInclude Include="ProjectileManager.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Settings.h" />
+    <ClInclude Include="src\framework\InputManager.h" />
+    <ClInclude Include="src\game\Components.h" />
+    <ClInclude Include="src\game\Constructures.h" />
+    <ClInclude Include="src\game\scenes\CoreScene.h" />
+    <ClInclude Include="src\game\scenes\StartScene.h" />
+    <ClInclude Include="src\framework\Game.h" />
+    <ClInclude Include="src\game\Systems.h" />
+    <ClInclude Include="src\lib\ces\Scene.h" />
+    <ClInclude Include="src\lib\collections\DynamicBuffer.h" />
+    <ClInclude Include="src\lib\collections\IStorage.h" />
+    <ClInclude Include="src\lib\io\ConfigFile.h" />
+    <ClInclude Include="src\lib\io\TextFileInput.h" />
+    <ClInclude Include="src\lib\math\Matrix.h" />
+    <ClInclude Include="src\lib\math\Vector.h" />
+    <ClInclude Include="src\lib\math\_Matrix.h" />
+    <ClInclude Include="src\lib\math\_VectorSrc.h" />
     <ClInclude Include="Timer.h" />
-    <ClInclude Include="Vector.h" />
-    <ClInclude Include="Vector2f.h" />
-    <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Avatar.cpp" />
-    <ClCompile Include="CollisionManager.cpp" />
-    <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="Image.cpp" />
-    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Projectile.cpp" />
-    <ClCompile Include="ProjectileManager.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="src\framework\InputManager.cpp" />
+    <ClCompile Include="src\game\scenes\CoreScene.cpp" />
+    <ClCompile Include="src\game\scenes\StartScene.cpp" />
+    <ClCompile Include="src\lib\ces\Scene.cpp" />
+    <ClCompile Include="src\lib\io\TextFileInput.cpp" />
     <ClCompile Include="Timer.cpp" />
-    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

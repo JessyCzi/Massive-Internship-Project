@@ -11,7 +11,7 @@ Avatar::Avatar()
     CreateImage(Settings::Avatar_defaultImage, 32, 0, 32, 32);
     myPos.Set(100.0f,100.0f);
     m_input = Game::GetInput();
-    SetCollisionRadius(30.0f);
+//    SetCollisionRadius(30.0f);
 }
 
 Avatar::~Avatar()

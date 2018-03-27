@@ -1,37 +1,33 @@
 #include "World.h"
-#include "Avatar.h"
-#include "Enemy.h"
 #include "Image.h"
 #include "Game.h"
 #include "Settings.h"
+#include "Timer.h"
+
+#include "game\Components.h"
+#include "game\Systems.h"
+
+
+
+World::World() : m_scene(256) {}
 
 void World::Create()
 {
-    myBackGround = new Image(Settings::Background_defaultImage);
-	myBackGround->SetPosition(Vector2f(0, 0));
+	typedef unsigned int Mask;
+	typedef unsigned int Entity;
 
-    myAvatar = new Avatar;
-    myEnemy = new Enemy;
+	
 }
 
 void World::Destroy()
 {
-    delete myAvatar;
-    delete myEnemy;
-    delete myBackGround;
+
+	// fix when image managent 
+
+	//m_scene.~Scene();
 }
 
-void World::Update()
-{
-    myAvatar->Update();
-    myEnemy->Update();
-}
+void World::Update() { m_scene.Update(Timer::GetElapsedFrameTime()); }
 
-void World::Draw()
-{
-    Game::GetRenderer()->Draw(myBackGround);
-
-    myAvatar->Draw();
-    myEnemy->Draw();
-}
+void World::Draw() { m_scene.Draw(Timer::GetElapsedFrameTime()); }
 

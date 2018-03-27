@@ -9,34 +9,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="World.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector2f.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="Timer.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="ProjectileManager.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Projectile.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Avatar.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionManager.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Entity.h">
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="EventHandler.h">
@@ -51,38 +24,28 @@
     <ClInclude Include="Image.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="InputManager.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Renderer.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="Settings.h">
       <Filter>Game</Filter>
     </ClInclude>
+    <ClInclude Include="src\lib\ces\Scene.h" />
+    <ClInclude Include="src\game\Systems.h" />
+    <ClInclude Include="src\game\Components.h" />
+    <ClInclude Include="src\lib\math\_Matrix.h" />
+    <ClInclude Include="src\lib\math\_VectorSrc.h" />
+    <ClInclude Include="src\lib\math\Matrix.h" />
+    <ClInclude Include="src\lib\math\Vector.h" />
+    <ClInclude Include="src\lib\collections\DynamicBuffer.h" />
+    <ClInclude Include="src\lib\collections\IStorage.h" />
+    <ClInclude Include="src\game\Constructures.h" />
+    <ClInclude Include="src\game\scenes\CoreScene.h" />
+    <ClInclude Include="src\game\scenes\StartScene.h" />
+    <ClInclude Include="src\lib\io\TextFileInput.h" />
+    <ClInclude Include="src\lib\io\ConfigFile.h" />
+    <ClInclude Include="src\framework\Game.h" />
+    <ClInclude Include="src\framework\InputManager.h" />
+    <ClInclude Include="Renderer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="World.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Avatar.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Projectile.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="ProjectileManager.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="CollisionManager.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
     <ClCompile Include="EventHandler.cpp">
       <Filter>Core</Filter>
     </ClCompile>
@@ -95,17 +58,17 @@
     <ClCompile Include="Image.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="InputManager.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Renderer.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
     <ClCompile Include="Timer.cpp">
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="src\lib\ces\Scene.cpp" />
+    <ClCompile Include="src\game\scenes\CoreScene.cpp" />
+    <ClCompile Include="src\game\scenes\StartScene.cpp" />
+    <ClCompile Include="src\lib\io\TextFileInput.cpp" />
+    <ClCompile Include="src\framework\InputManager.cpp" />
+    <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
 </Project>

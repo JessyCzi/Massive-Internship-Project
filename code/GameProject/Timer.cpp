@@ -12,10 +12,10 @@ void Timer::Update()
 
 float Timer::GetElapsedFrameTime()
 {
-    return ourFrameTime - ourLastFrameTime;
+	return ourFrameTime - ourLastFrameTime;
 }
 
 float Timer::GetTime()
 {
-    return ourFrameTime;
+	return ourFrameTime;
 }

@@ -1,9 +1,13 @@
 
 
+#include "framework\InputManager.h"
+
 #include "Game.h"
 
 int main(int argc, char **argv)
 {
+
+
 	if (!Game::Create())
 	{
 		return 1;

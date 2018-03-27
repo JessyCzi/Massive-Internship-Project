@@ -13,18 +13,18 @@ public:
     virtual void Update();
     virtual void Draw();
     Vector2f GetPosition() const;
-    float GetCollisionRadius() const;
+    //float GetCollisionRadius() const;
 
 protected:
     virtual void CreateImage(const char* path, int xOffset = 0, int yOffset = 0, int width = 0, int height = 0);
 
-    // Collision
-    void SetCollisionEnabled(bool aValue);
-    void SetCollisionRadius(float aRadius);
+    //// Collision
+    //void SetCollisionEnabled(bool aValue);
+    //void SetCollisionRadius(float aRadius);
 
     Vector2f myPos;
     Image* myImage;
-    float myCollisionRadius;
+    //float myCollisionRadius;
 };
 
 #endif

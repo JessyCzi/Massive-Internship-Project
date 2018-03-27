@@ -1,22 +1,22 @@
 #ifndef World_H
 #define World_H
 
-class Image;
-class Avatar;
-class Enemy;
+#include "lib\ces\Scene.h"
 
 class World
 {
+	
+	Scene m_scene;
+
 public:
-    void Create();
-    void Destroy();
-    void Update();
-    void Draw();
+	World();
+	void Create();
+	void Destroy();
+	void Update();
+	void Draw();
 
 private:
-    Image* myBackGround;
-    Avatar* myAvatar;
-    Enemy* myEnemy;
+
 };
 
 #endif

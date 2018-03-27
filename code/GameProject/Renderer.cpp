@@ -8,7 +8,7 @@ bool Renderer::Init()
 {
 	mySFMLWindow = Game::GetInstance()->GetGameWindow()->GetRenderWindow();
 
-    return true;
+	return true;
 }
 
 void Renderer::Shutdown()

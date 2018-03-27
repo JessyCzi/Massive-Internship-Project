@@ -42,12 +42,3 @@ void ProjectileManager::CreateProjectile(Projectile::ProjectileType aType, Vecto
     myProjectiles.push_back(projectile);
 }
 
-bool ProjectileManager::GetCollidedEntity(const Entity* anEntity, Entity* aReturnEntity)
-{
-    if (Game::GetCollision()->GetIntersectedItem(*anEntity, aReturnEntity))
-    {
-        return true;
-    }
-    aReturnEntity = nullptr;
-    return false;
-}

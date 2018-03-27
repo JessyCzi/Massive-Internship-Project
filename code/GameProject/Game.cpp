@@ -3,38 +3,41 @@
 #include "Renderer.h"
 #include "Timer.h"
 
+#include "game\scenes\StartScene.h"
+
 Game* Game::ourGame = nullptr;
 
 bool Game::Create()
 {
-    if (ourGame == nullptr)
-    {
-        ourGame = new Game();
-        if (!ourGame->Init())
-        {
-            delete ourGame;
-            return false;
-        }
-    }
-    return true;
+	if (ourGame == nullptr)
+	{
+		ourGame = new Game();
+		if (!ourGame->Init())
+		{
+			delete ourGame;
+			return false;
+		}
+	}
+	return true;
 }
 
 Game* Game::GetInstance()
 {
-    return ourGame;
+	return ourGame;
 }
 
 void Game::Destroy()
 {
-    if (ourGame)
-    {
-        ourGame->Shutdown();
-        delete ourGame;
-    }
+	if (ourGame)
+	{
+		ourGame->Shutdown();
+		delete ourGame;
+	}
 }
 
 Game::Game()
 {
+
 }
 
 Game::~Game()
@@ -44,63 +47,63 @@ Game::~Game()
 
 bool Game::Init()
 {
-    myRenderer.Init();
-    myInputManager.Init();
-    myEventHandler.Init();
-    myProjectileManager.Init();
+	myRenderer.Init();
+	//myInputManager.Init();
+	myEventHandler.Init();
+	//myProjectileManager.Init();
 
-    return true;
+	return true;
 }
 
 bool Game::Run()
 {
-    myRunning = true;
+	myRunning = true;
+	m_scene = new StartScene();
 
-    myWorld.Create();
+	m_scene->init();
+	while (myRunning)
+	{
+		Update();
+		Render();
+	}
 
-    while (myRunning)
-    {
-        Update();
-        Render();
-    }
+	delete m_scene;
 
-    myWorld.Destroy();
-
-    return true;
+	return true;
 }
 
 void Game::Render()
 {
 	myRenderer.Prepare();
+	
+	m_scene->Draw(Timer::GetElapsedFrameTime());
 
-    myWorld.Draw();
-    myProjectileManager.Draw();
 
-    myRenderer.Render();
+	//myProjectileManager.Draw();
+
+	myRenderer.Render();
 }
 
 void Game::Stop()
 {
-    myRunning = false;
+	myRunning = false;
 }
 
 bool Game::Shutdown()
 {
-    myRenderer.Shutdown();
-    return true;
+	myRenderer.Shutdown();
+	return true;
 }
 
 void Game::Update()
 {
-    Timer::Update();
+	Timer::Update();
 
 	myEventHandler.HandleEvents();
+	
+	//myProjectileManager.Update();
 
-    myInputManager.Update();
-
-    myProjectileManager.Update();
-
-    myWorld.Update();
+	m_scene->Update(Timer::GetElapsedFrameTime());
 }
 
 
@@ -117,50 +120,30 @@ GameWindow* Game::GetGameWindow()
 
 Renderer* Game::GetRenderer()
 {
-    if (ourGame)
-    {
-        return &ourGame->myRenderer;
-    } 
+	if (ourGame)
+	{
+		return &ourGame->myRenderer;
+	} 
 
-    return nullptr;
+	return nullptr;
 }
 
-InputManager* Game::GetInput()
+//ProjectileManager* Game::GetProjectiles()
+//{
+//	if (ourGame)
+//	{
+//		return &ourGame->myProjectileManager;
+//	} 
+//
+//	return nullptr;
+//}
+
+Scene* Game::GetScene()
 {
-    if (ourGame)
-    {
-        return &ourGame->myInputManager;
-    } 
+	if (ourGame)
+	{
+		return ourGame->m_scene;
+	} 
 
-    return nullptr;
-}
-
-ProjectileManager* Game::GetProjectiles()
-{
-    if (ourGame)
-    {
-        return &ourGame->myProjectileManager;
-    } 
-
-    return nullptr;
-}
-
-World* Game::GetWorld()
-{
-    if (ourGame)
-    {
-        return &ourGame->myWorld;
-    } 
-
-    return nullptr;
-}
-
-CollisionManager* Game::GetCollision()
-{
-    if (ourGame)
-    {
-        return &ourGame->myCollisionManager;
-    } 
-
-    return nullptr;
+	return nullptr;
 }

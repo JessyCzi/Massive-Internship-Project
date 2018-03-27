@@ -7,14 +7,14 @@
 class Timer
 {
 public:
-    static void Update();
+	static void Update();
 
-    static float GetElapsedFrameTime();
+	static float GetElapsedFrameTime();
 
-    static float GetTime();
+	static float GetTime();
 private:
-    static float ourLastFrameTime;
-    static float ourFrameTime;
+	static float ourLastFrameTime;
+	static float ourFrameTime;
 
 	static sf::Clock ourTimer;
 };

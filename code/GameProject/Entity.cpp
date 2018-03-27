@@ -7,32 +7,32 @@
 Entity::Entity()
 :myImage(0)
 {
-    myCollisionRadius = Settings::Collision_defaultRadius;
+//	myCollisionRadius = Settings::Collision_defaultRadius;
 }
 
 Entity::~Entity()
 {
-    if (myImage)
-    {
-        delete myImage;
+	if (myImage)
+	{
+		delete myImage;
 	}
 
-	SetCollisionEnabled(false);
+	//SetCollisionEnabled(false);
 }
 
 void Entity::Draw()
 {
-    if (myImage)
-    {
+	if (myImage)
+	{
 		myImage->SetPosition(myPos);
 
-        Game::GetRenderer()->Draw(myImage);
-    }
+		Game::GetRenderer()->Draw(myImage);
+	}
 }
 
 void Entity::CreateImage(const char* path, int xOffset, int yOffset, int width, int height)
 {
-    myImage = new Image(path, xOffset, yOffset, width, height);
+	myImage = new Image(path, xOffset, yOffset, width, height);
 }
 
 void Entity::Update()
@@ -42,27 +42,16 @@ void Entity::Update()
 
 Vector2f Entity::GetPosition() const
 {
-    return myPos;
+	return myPos;
 }
 
-float Entity::GetCollisionRadius() const
-{
-    return myCollisionRadius;
-}
-
-void Entity::SetCollisionEnabled(bool aValue)
-{
-    if (aValue)
-    {
-        Game::GetCollision()->AddCollisionItem(this);
-    }
-    else
-    {
-        Game::GetCollision()->RemoveCollisionItem(this);
-    }
-}
-
-void Entity::SetCollisionRadius(float aRadius)
-{
-    myCollisionRadius = aRadius;
-}
+//float Entity::GetCollisionRadius() const
+//{
+//	return myCollisionRadius;
+//}
+//
+//
+//void Entity::SetCollisionRadius(float aRadius)
+//{
+//	myCollisionRadius = aRadius;
+//}

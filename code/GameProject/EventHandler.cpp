@@ -18,5 +18,5 @@ void EventHandler::HandleEvents()
 
 void EventHandler::OnQuit()
 {
-    Game::GetInstance()->Stop();
+	Game::GetInstance()->Stop();
 }
